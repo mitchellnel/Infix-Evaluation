@@ -1,0 +1,60 @@
+validateInfix & isValid pseudocode
+====================================
+/*
+ remove spaces from infix string
+ keep track of number of parentheses
+ 
+ check first char in infix
+    if it's an operand
+        okay
+    if it's a '('
+        increment nParentheses
+    else
+        invalid string
+ 
+ for every char in the infix string, barring the very last one
+    keep track of current char
+    keep track of prev char
+    keep track of next char
+ 
+    if curr char is operand
+        check if valid in context
+            prev must be either operator or '('
+            next must be either operator or ')'
+            else invalid
+    
+    if curr char is '('
+        if valid in context (prev must be either operator or another '('; next must be operand or another '('
+            increment nParentheses
+        else
+            invalid string
+ 
+    if curr char is ')'
+        if valid in context (prev must be either operand or another ')'; next must be either operator or ')'
+            decrement nParentheses
+            if nParenthese negative
+                invalid string
+        else
+            invalid string
+ 
+    if curr char is operator
+        check if valid in context
+            prev must be either operand or ')'
+            next must be either operand or '('
+        else
+            invalid string
+ end loop
+ 
+ check last char in infix
+    if it's an operand
+        if prev char isn't operator
+            invalid string
+    if it's a ')'
+        if prev char isn't operand or ')'
+            invalid string
+        decrement nParentheses
+        if nParentheses not 0
+            invalid string
+    else anything other than that
+        invalid string
+ */
