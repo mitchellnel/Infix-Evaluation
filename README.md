@@ -7,7 +7,7 @@ Operators have their conventional precedence and associativity.
 
 Multiplication must be explicitly indicated with the * operator.
 
-The operands in the expression are single lower case letters. Along with the expression string, the function is passed a Map with KeyType char, and ValueType int.
+The operands in the expression are single lower case letters. Along with the expression string, the function is passed a [Map](https://github.com/mitchellnel/Map-Implementations/tree/master/Map%20(as%20Linked%20List)/Map/Map) with KeyType char, and ValueType int.
 
 Each letter character in the expression represents the integer value in the map that is paired with that letter key. For example, if the Map maps a to 3, c to 5, 1 to 2, and u to 11, then the expression “ u – c + 1 * a ” would evaluate to 12.
 
